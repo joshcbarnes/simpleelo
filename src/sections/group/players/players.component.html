@@ -1,0 +1,47 @@
+<div class="players-container">
+    <div class="new-player">
+        <form class="player-form">
+            <mat-form-field>
+                <input #newPlayer matInput placeholder="Add a Player">
+            </mat-form-field>
+        </form>
+        <button mat-mini-fab (click)="createPlayer(newPlayer.value)">
+            <mat-icon aria-label="Add a Player">person_add</mat-icon>
+        </button>
+    </div>
+
+    <mat-table #playersTable class="players-table" [dataSource]="playersDataSource"
+        matSort
+        matSortActive="elo"
+        matSortDisableClear
+        matSortDirection="desc"
+        *ngIf="!playersLoading"
+    >
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="elo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ELO Ranking </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <div class="elo-ranking">{{element.elo | number:'1.0-0'}}</div> </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="playersDisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: playersDisplayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-progress-spinner
+        class="loading-group"
+        color="primary"
+        mode="indeterminate"
+        *ngIf="playersLoading"
+    >
+    </mat-progress-spinner>
+</div>
+
+<div class="next-page">
+    <a routerLink="/groups/{{groupId}}/matches" routerLinkActive="active">
+        <mat-icon aria-label="Next Page">navigate_next</mat-icon>
+    </a>
+</div>

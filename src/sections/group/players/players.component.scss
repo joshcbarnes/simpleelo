@@ -1,0 +1,32 @@
+@import '~theme.scss';
+
+.players-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.players-table {
+    width: 100%;
+
+    .elo-ranking {
+        text-align: center;
+        font-weight: bold;
+        width: 50px;
+        padding: 5px;
+        border-radius: 3px;
+        color: map-get(map-get($simpleelo-red, contrast), 500);
+        background: map-get($simpleelo-red, 500);
+    }
+}
+
+.new-player {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+
+    > * {
+        display: inline-block;
+    }     
+}

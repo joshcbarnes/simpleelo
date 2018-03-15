@@ -1,0 +1,22 @@
+.group-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+
+  > mat-form-field {
+    width: 100%;
+  }
+}
+
+.new-group {
+  display: flex;
+  justify-content: center;
+
+  > * {
+    display: inline-block;
+  }
+}
+
+.loading-group {
+  margin: 0 auto;
+}

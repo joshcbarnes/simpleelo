@@ -1,0 +1,109 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$simpleelo-blue: (
+    50 : #e8f0fe,
+    100 : #c6dbfc,
+    200 : #a1c3fa,
+    300 : #7baaf7,
+    400 : #5e98f6,
+    500 : #4286f4,
+    600 : #3c7ef3,
+    700 : #3373f1,
+    800 : #2b69ef,
+    900 : #1d56ec,
+    A100 : #ffffff,
+    A200 : #eef2ff,
+    A400 : #bbccff,
+    A700 : #a1b8ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$simpleelo-red: (
+    50 : #feece8,
+    100 : #fccec6,
+    200 : #faaea1,
+    300 : #f78e7b,
+    400 : #f6755e,
+    500 : #f45d42,
+    600 : #f3553c,
+    700 : #f14b33,
+    800 : #ef412b,
+    900 : #ec301d,
+    A100 : #ffffff,
+    A200 : #ffefee,
+    A400 : #ffc0bb,
+    A700 : #ffa8a1,
+    contrast: (
+        50 : #333333,
+        100 : #333333,
+        200 : #333333,
+        300 : #333333,
+        400 : #333333,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #333333,
+        A200 : #333333,
+        A400 : #333333,
+        A700 : #333333,
+    )
+);
+
+$warning-red: (
+    50 : #fde8e8,
+    100 : #f9c7c7,
+    200 : #f5a1a1,
+    300 : #f17b7b,
+    400 : #ee5f5f,
+    500 : #eb4343, // TODO: May want to update @skinInvalidColor in allocadia/skin.less when updating the primary and secondary brand colors above
+    600 : #e93d3d,
+    700 : #e53434,
+    800 : #e22c2c,
+    900 : #dd1e1e,
+    A100 : #ffffff,
+    A200 : #ffe0e0,
+    A400 : #ffadad,
+    A700 : #ff9393,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$simpleelo-primary: mat-palette($simpleelo-blue);
+$simpleelo-accent: mat-palette($simpleelo-red);
+$simpleelo-warn: mat-palette($warning-red);
+
+$simpleelo-theme: mat-light-theme($simpleelo-primary, $simpleelo-accent, $simpleelo-warn);
+
+@include angular-material-theme($simpleelo-theme);

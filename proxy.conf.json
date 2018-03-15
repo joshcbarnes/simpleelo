@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+    "target": "https://z8332duala.execute-api.us-east-2.amazonaws.com/Prod",
+     "secure": false,
+     "changeOrigin": true,
+     "logLevel": "debug",
+     "pathRewrite": {"^/api" : ""}
+  }
+}
