@@ -27,7 +27,7 @@
         matSortActive="timestamp"
         matSortDisableClear
         matSortDirection="asc"
-        *ngIf="!matchesLoading"
+        [hidden]="matchesLoading"
     >
         <ng-container matColumnDef="timestamp">
             <mat-header-cell *matHeaderCellDef mat-sort-header>

@@ -21,8 +21,8 @@ export class PlayersComponent implements OnInit, OnDestroy {
 
     private playersStateSubscription: Subscription;
 
-    private playersDisplayedColumns = ['email', 'elo'];
-    private playersDataSource = new MatTableDataSource();
+    playersDisplayedColumns = ['email', 'elo'];
+    playersDataSource = new MatTableDataSource();
 
     @ViewChild(MatSort) playersSort: MatSort;
 
@@ -42,9 +42,9 @@ export class PlayersComponent implements OnInit, OnDestroy {
         this.groupId = this.route.snapshot.params.groupId;
         
         this.playersStateSubscription = this.store.select(store => store.player).subscribe(playerState => {
+            this.playersLoading = false;
             this.playersDataSource.data = playerState.players;
             this.playersDataSource.sort = this.playersSort;
-            this.playersLoading = false;
         });
         
         this.store.dispatch(new GetPlayers(this.groupId));

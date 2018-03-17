@@ -15,7 +15,7 @@
         matSortActive="elo"
         matSortDisableClear
         matSortDirection="desc"
-        *ngIf="!playersLoading"
+        [hidden]="playersLoading"
     >
         <ng-container matColumnDef="email">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
