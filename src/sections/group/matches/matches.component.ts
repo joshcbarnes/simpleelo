@@ -21,8 +21,8 @@ export class MatchesComponent implements OnInit, OnDestroy {
 
     private matchesStateSubscription: Subscription;
 
-    private matchesDisplayedColumns = ['timestamp', 'player1', 'player2', 'winner'];
-    private matchesDataSource = new MatTableDataSource();
+    matchesDisplayedColumns = ['timestamp', 'player1', 'player2', 'winner'];
+    matchesDataSource = new MatTableDataSource();
 
     @ViewChild(MatSort) matchesSort: MatSort;
 
