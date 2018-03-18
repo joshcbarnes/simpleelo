@@ -1,12 +1,13 @@
-<div class="new-group" *ngIf="!(group$ | async).loading">
-    <form class="group-form">
+<div *ngIf="!(group$ | async).loading">
+    <form class="group-form" (ngSubmit)="createGroup(newGroup.value)">
         <mat-form-field class="example-full-width">
             <input #newGroup matInput placeholder="Create a New Group">
         </mat-form-field>
+
+        <button mat-fab>
+            <mat-icon aria-label="Add a Group">group_add</mat-icon>
+        </button>
     </form>
-    <button mat-fab (click)="createGroup(newGroup.value)">
-        <mat-icon aria-label="Add a Group">group_add</mat-icon>
-    </button>
 </div>
 <mat-progress-spinner
     class="loading-group"

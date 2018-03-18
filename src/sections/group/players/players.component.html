@@ -1,14 +1,13 @@
 <div class="players-container">
-    <div class="new-player">
-        <form class="player-form">
-            <mat-form-field>
-                <input #newPlayer matInput placeholder="Add a Player">
-            </mat-form-field>
-        </form>
-        <button mat-mini-fab (click)="createPlayer(newPlayer.value)">
+    <form class="new-player" (ngSubmit)="createPlayer(newPlayer.value)">
+        <mat-form-field>
+            <input #newPlayer matInput placeholder="Add a Player">
+        </mat-form-field>
+
+        <button mat-mini-fab>
             <mat-icon aria-label="Add a Player">person_add</mat-icon>
         </button>
-    </div>
+    </form>
 
     <mat-table #playersTable class="players-table" [dataSource]="playersDataSource"
         matSort
