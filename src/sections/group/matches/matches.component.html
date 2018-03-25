@@ -34,7 +34,7 @@
                 <mat-icon aria-label="Time">access_time</mat-icon>
                 <span>Time</span>
             </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.timestamp}} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{element.timestamp | date:'medium'}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="player1">
