@@ -13,6 +13,7 @@ import { RouterModule } from "@angular/router";
 import { MatTableModule, MatSortModule } from "@angular/material";
 import { MatchesComponent } from "./group/matches/matches.component";
 import { PlayersComponent } from "./group/players/players.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PlayersComponent } from "./group/players/players.component";
     PageNotFoundComponent
   ],
   imports: [
+    CommonModule,
     ComponentsModule,
     MatIconModule,
     MatInputModule,
