@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { HomeComponent } from "./home/home.component";
 import { ComponentsModule } from "../components/components.module";
 import { PageNotFoundComponent } from "./notfound/notfound.component";
@@ -26,6 +27,7 @@ import { CommonModule } from "@angular/common";
   imports: [
     CommonModule,
     ComponentsModule,
+    FormsModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,

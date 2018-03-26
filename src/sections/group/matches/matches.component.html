@@ -6,7 +6,7 @@
 
 <div class="matches-container">
     <div class="new-match" *ngIf="!matchesLoading">
-        <form class="match-form">
+        <form class="match-form" (ngSubmit)="createMatch(playerOne.value, playerTwo.value, winner.value)">
             <mat-form-field>
                 <input #playerOne matInput placeholder="Player 1">
             </mat-form-field>
@@ -16,10 +16,11 @@
             <mat-form-field>
                 <input #winner matInput placeholder="Winner">
             </mat-form-field>
+
+            <button mat-mini-fab>
+                <mat-icon aria-label="Record Match">done</mat-icon>
+            </button>
         </form>
-        <button mat-mini-fab (click)="createMatch(playerOne.value, playerTwo.value, winner.value)">
-            <mat-icon aria-label="Record Match">done</mat-icon>
-        </button>
     </div>
 
     <mat-table #matchesTable class="matches-table" [dataSource]="matchesDataSource"
